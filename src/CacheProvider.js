@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import { client } from './services/client';
 import { signInUser, signUpUser } from './services/fetch-utils';
 
 const CacheContext = createContext();
