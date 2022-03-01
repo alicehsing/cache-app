@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Redirect,
+  NavLink
 } from 'react-router-dom';
 import { signOutUser } from '../../services/fetch-utils';
 import AuthPage from './AuthPage';
@@ -19,12 +20,15 @@ export default function Main() {
     <main>
       <Router>
         {
-          // Home
-          // Create
-          // Profile
-          // About
-          <button onClick={signOutUser}
-            type='button'>Sign Out</button>
+          currentUser
+          && <>
+            <NavLink to="/cachelist">Home</NavLink>
+            <NavLink to="/create">Create</NavLink>
+            <NavLink to="/profile/:id">Profile</NavLink>
+            <NavLink to="/about">About</NavLink>
+            <button onClick={signOutUser}
+              type='button'>Sign Out</button>
+          </>
         }
         <Switch>
           <Route exact path="/">
