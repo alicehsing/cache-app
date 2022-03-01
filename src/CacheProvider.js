@@ -64,6 +64,8 @@ export default function CacheProvider({ children }) {
     params, setParams,
     cacheDetail, setCacheDetail,
     userID, setUserID,
+    handleAuthSubmit,
+    handleCreateSubmit
   };
 
   return <CacheContext.Provider value={cacheStateAndSetters}>

@@ -1,6 +1,4 @@
 import React from 'react';
-import { signInUser, 
-  signUpUser } from '../../services/fetch-utils';
 import { useCacheContext } from '../../CacheProvider';
 
 
@@ -14,6 +12,7 @@ export default function AuthPage() {
     username, setUsername,
     email, setEmail,
     password, setPassword,
+    
   } = useCacheContext();
 
   return (
