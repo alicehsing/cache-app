@@ -1,15 +1,19 @@
 import React from 'react';
 import { signInUser, 
   signUpUser } from '../../services/fetch-utils';
+import { useCacheContext } from '../../CacheProvider';
 
 // TODO: state for newUser, setNewUser, email, setEmail, password, setPassword, username, setUsername
 
 export default function AuthPage() {
 
+  const {
+    handleAuthSubmit
+  } = useCacheContext();
 
   return (
     <>
-      <form onSubmit={handleSubmit}
+      <form onSubmit={handleAuthSubmit}
         id='auth-form'>
         <div>
           <span onClick={() => setNewUser(false)}

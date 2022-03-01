@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CacheProvider from './CacheProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CacheProvider>
+      <App />
+    </CacheProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
