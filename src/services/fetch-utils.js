@@ -32,3 +32,14 @@ export async function signOutUser() {
 }
 
 export default getUser;
+
+
+export async function getCacheById(id){
+  const response = await client
+    .from('cache')
+    .select()
+    .match({ id })
+    .single();
+
+  return checkError(response);
+}
