@@ -6,20 +6,7 @@ import { signInUser,
 
 export default function AuthPage() {
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    {
-      if (!newUser) {
-        const user = await signInUser(email, password);
-        setUser(user);
-      } else {
-        const user = await signUpUser(email, password);
-        setUser(user);
-      }
-      setEmail('');
-      setPassword('');
-    }
-  }
+
   return (
     <>
       <form onSubmit={handleSubmit}
