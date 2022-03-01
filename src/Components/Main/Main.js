@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import { signOutUser } from '../../services/fetch-utils';
 import AuthPage from './AuthPage';
 import AboutPage from './AboutPage';
 import CachePage from './Cache/CachePage';
@@ -17,11 +18,19 @@ export default function Main() {
   return ( 
     <main>
       <Router>
+        {
+          // Home
+          // Create
+          // Profile
+          // About
+          <button onClick={signOutUser}
+            type='button'>Sign Out</button>
+        }
         <Switch>
           <Route exact path="/">
             {
               !currentUser
-                ? <AuthPage setCurrentUser={setCurrentUser} />
+                ? <AuthPage />
                 : <Redirect to="/cachelist" />      
             }
           </Route>
