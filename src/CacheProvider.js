@@ -32,7 +32,7 @@ export default function CacheProvider({ children }) {
         const user = await signInUser(email, password);
         setCurrentUser(user);
       } else {
-        const user = await signUpUser(email, password);
+        const user = await signUpUser(email, password, username);
         setCurrentUser(user);
       }
       setEmail('');
@@ -65,7 +65,8 @@ export default function CacheProvider({ children }) {
     cacheDetail, setCacheDetail,
     userID, setUserID,
     handleAuthSubmit,
-    handleCreateSubmit
+    handleCreateSubmit,
+
   };
 
   return <CacheContext.Provider value={cacheStateAndSetters}>

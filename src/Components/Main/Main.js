@@ -13,9 +13,12 @@ import CachePage from './Cache/CachePage';
 import CacheDetail from './Cache/CacheDetail';
 import CreatePage from './CreatePage';
 import ProfilePage from './ProfilePage';
+import { useCacheContext } from '../../CacheProvider';
+
 
 export default function Main() {
-
+  const { currentUser } = useCacheContext();
+  
   return ( 
     <main>
       <Router>
