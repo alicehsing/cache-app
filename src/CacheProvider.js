@@ -4,10 +4,10 @@
 
 // Main : currentUser, setCurrentUser
 
-// Cache (list): search, setSearch, cacheList, setCacheList, userLocation, setUserLocation, toggle, setToggle
+// Cache (list): search, setSearch, cacheList, setCacheList, userLocation, setUserLocation, toggleView, setToggleView
 
 // Create Cache: title, setTitle, description, setDescription, image, setImage, latitude, setLatitude, longitude, setLongitude, handleSubmit
 
-// Cache (detail): toggleView, setToggleView, 
+// Cache (detail): toggleView, setToggleView, params, cacheDetail, setCacheDetail
 
-// Profile:
+// Profile: toggleView, setToggleView, userID, setUserIdgit
