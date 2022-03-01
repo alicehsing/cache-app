@@ -46,13 +46,6 @@ export default function Main() {
                 : <Redirect to="/" />
             }
           </Route>
-          <Route exact path="/about">
-            {
-              currentUser
-                ? <AboutPage />
-                : <Redirect to="/" />
-            }
-          </Route>
           <Route exact path="/profile/:id">
             {
               currentUser
@@ -60,7 +53,13 @@ export default function Main() {
                 : <Redirect to="/" />
             }
           </Route>
-
+          <Route exact path="/about">
+            {
+              currentUser
+                ? <AboutPage />
+                : <Redirect to="/" />
+            }
+          </Route>
         </Switch>
       </Router>
     </main>
