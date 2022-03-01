@@ -22,6 +22,7 @@ export default function Main() {
         {
           currentUser
           && <>
+            {/* replace with burger menu library component */}
             <NavLink to="/cachelist">Home</NavLink>
             <NavLink to="/create">Create</NavLink>
             <NavLink to="/profile/:id">Profile</NavLink>

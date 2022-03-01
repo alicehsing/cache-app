@@ -1,14 +1,18 @@
 import React from 'react';
-import { signInUser, 
-  signUpUser } from '../../services/fetch-utils';
 import { useCacheContext } from '../../CacheProvider';
+
 
 // TODO: state for newUser, setNewUser, email, setEmail, password, setPassword, username, setUsername
 
 export default function AuthPage() {
 
   const {
-    handleAuthSubmit
+    handleAuthSubmit,    
+    newUser, setNewUser,
+    username, setUsername,
+    email, setEmail,
+    password, setPassword,
+    
   } = useCacheContext();
 
   return (
