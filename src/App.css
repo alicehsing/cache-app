@@ -1,5 +1,4 @@
-
-   
+ 
 * {
   box-sizing: border-box;
 }
@@ -67,4 +66,8 @@ button {
   padding: 0.25em;
   align-self: center;
   cursor: pointer;
+}
+
+figure img {
+  width: 300px;
 }

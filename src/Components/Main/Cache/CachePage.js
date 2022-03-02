@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useCacheContext } from '../../../CacheProvider';
 import { getAllCaches } from '../../../services/fetch-utils';
+import CacheItem from './CacheItem';
 
 
 export default function CachePage() {
