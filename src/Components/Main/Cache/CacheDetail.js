@@ -19,14 +19,16 @@ export default function CacheDetail() {
   }, [params.id, setCacheDetail]);
 
   return (
-    <><div className='cache-detail-div'>
-      <h1>{cacheDetail.title}</h1>
-      <img className='detail-page-img' src={cacheDetail.image} />
-      <p>{cacheDetail.lat}, {cacheDetail.lon}</p>
-      <p className='description'>{cacheDetail.description}</p>
+    <><section className='cache-detail'>
 
+      <figure>
+        <h2>{cacheDetail.title}</h2>
+        <img alt={cacheDetail.title} src={cacheDetail.image}/>
+        <figcaption>{cacheDetail.latitude}°, {cacheDetail.longitude}°</figcaption>
+        <p>{cacheDetail.description}</p>
+      </figure>
 
-    </div>
+    </section>
     {/* // toggle view first..Stretch-swipe up.
       // onLoad= get item based on Params. 
       // False=Default get the row in supabase. render image, title, description
