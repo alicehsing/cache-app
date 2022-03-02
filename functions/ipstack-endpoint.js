@@ -4,9 +4,14 @@ require('dotenv').config();
 
 exports.handler = async (event, context) => {
   try {
-    const response = await fetch('https://cat-fact.herokuapp.com/facts');
+    console.log('hiiii, we hit our endpoint');
+    const response = await fetch(`http://api.ipstack.com/check?access_key=${process.env.IPSTACK_KEY}`);
+    console.log('endpoint response', response);
     const data = await response.json();
+    console.log('data', data);
+
     const json = JSON.stringify({ data });
+    console.log('json', json);
     
     return { 
       statusCode: 200, 

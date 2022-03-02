@@ -42,13 +42,15 @@ export default function CacheProvider({ children }) {
 
   async function handleCreateSubmit(e) {
     e.preventDefault();
-    console.log(image);
     const cacheImg = await uploadImage(image);
-    // const user = await getUser();
-    console.log(currentUser, 'curent user');
-    console.log(cacheImg, 'cache img');
-    console.log(`https://nioqwidggusxqcqbwypa.supabase.in/storage/v1/object/public/${cacheImg.Key}`);
 
+    // endpoint call
+    const response = await fetch(`/.netlify/functions/ipstack-endpoint`);
+    console.log('response', response);
+
+    const json = await response.json();
+    console.log('ipstack data', json);
+    // 
 
     await createCache({ 
       title,
@@ -57,7 +59,6 @@ export default function CacheProvider({ children }) {
       latitude,
       longitude,
     });
-      // make new ROW in supabase using form values stored in state (title, description, img) -- call in createCacheItem (fetch-utils)
   }
 
   const cacheStateAndSetters = {
