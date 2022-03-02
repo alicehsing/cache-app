@@ -19,7 +19,7 @@ export default function CacheProvider({ children }) {
   const [image, setImage] = useState({});
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
-  const [params, setParams] = useState('');
+  // const [params, setParams] = useState('');
   const [cacheDetail, setCacheDetail] = useState({});
   const [userID, setUserID] = useState(0);
 
@@ -82,7 +82,6 @@ export default function CacheProvider({ children }) {
     image, setImage,
     latitude, setLatitude,
     longitude, setLongitude,
-    params, setParams,
     cacheDetail, setCacheDetail,
     userID, setUserID,
     handleAuthSubmit,

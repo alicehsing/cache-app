@@ -1,9 +1,22 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useCacheContext } from '../../../CacheProvider';
 import { getCacheById } from '../../../services/fetch-utils';
 
 export default function CacheDetail() {
-  const { toggleView, setToggleView, params, setParams, cacheDetail, setCacheDetail, } = useCacheContext();
+  const { toggleView, setToggleView, cacheDetail, setCacheDetail, } = useCacheContext();
+
+  const params = useParams();
+  useEffect(() => {
+    async function onLoad() {
+      const responseData = await getCacheById(params.id);
+      setCacheDetail(responseData);
+      console.log(responseData, params);
+    }
+    
+    onLoad();
+
+  }, [params.id, setCacheDetail]);
 
   return (
     <><div className='cache-detail-div'>
