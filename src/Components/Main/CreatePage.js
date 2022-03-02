@@ -4,9 +4,13 @@ import { useCacheContext } from '../../CacheProvider';
 
 export default function CreatePage() {
   const { title, setTitle, description, setDescription, image, setImage, latitude, setLatitude, longitude, setLongitude, handleCreateSubmit } = useCacheContext();
+  function handleImageUpload(e){
+    console.log(e.target.files);
+    setImage(e.target.files[0]); 
+  }
 
   return (
-    <>
+    <><img src='https://nioqwidggusxqcqbwypa.supabase.in/storage/v1/object/public/cache-images/9a5b1474-1fd1-426f-b04f-5d5969b873e0/cache-images/9a5b1474-1fd1-426f-b04f-5d5969b873e0/23-1.jpeg' />
       <form onSubmit={handleCreateSubmit}>
         <h2>Create Cache</h2>
         <label htmlFor='title' >
@@ -14,7 +18,7 @@ export default function CreatePage() {
         </label>
 
         <label>
-          <input type='file' name='img' accept='image/ *' value={image} onChange={e => setImage(e.target.value)} />
+          <input type='file' name='img' accept='image/ *' onChange={e => handleImageUpload(e)} />
         </label>
 
         <label htmlFor='description'>
@@ -26,6 +30,7 @@ export default function CreatePage() {
       </form>
 
     </>
+
      /* // ---Form---
       // Title
       // Description

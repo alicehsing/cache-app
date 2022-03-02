@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 // import { client } from './services/client';
-import { signInUser, signUpUser } from './services/fetch-utils';
+import getUser, { createCache, signInUser, signUpUser, uploadImage } from './services/fetch-utils';
 
 const CacheContext = createContext();
 
@@ -9,7 +9,7 @@ export default function CacheProvider({ children }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
-  const [currentUser, setCurrentUser] = useState(localStorage.getItem('supabase.auth.token'));
+  const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('supabase.auth.token')));
   const [search, setSearch] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [cacheList, setCacheList] = useState([]);
@@ -17,7 +17,7 @@ export default function CacheProvider({ children }) {
   const [toggleView, setToggleView] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
+  const [image, setImage] = useState({});
   const [latitude, setLatitude] = useState(0);
   const [longitude, setLongitude] = useState(0);
   const [params, setParams] = useState('');
@@ -42,8 +42,21 @@ export default function CacheProvider({ children }) {
 
   async function handleCreateSubmit(e) {
     e.preventDefault();
+    console.log(image);
+    const cacheImg = await uploadImage(image);
+    // const user = await getUser();
+    console.log(currentUser, 'curent user');
+    console.log(cacheImg, 'cache img');
+    console.log(`https://nioqwidggusxqcqbwypa.supabase.in/storage/v1/object/public/${cacheImg.Key}`);
 
-    
+
+    await createCache({ 
+      title,
+      description,
+      image:`https://nioqwidggusxqcqbwypa.supabase.in/storage/v1/object/public/${cacheImg.Key}`,
+      latitude,
+      longitude,
+    });
       // make new ROW in supabase using form values stored in state (title, description, img) -- call in createCacheItem (fetch-utils)
   }
 
