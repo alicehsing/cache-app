@@ -1,7 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 // import { client } from './services/client';
 import getUser, { createCache, signInUser, signUpUser, uploadImage } from './services/fetch-utils';
-
 const CacheContext = createContext();
 
 export default function CacheProvider({ children }) {
@@ -43,14 +42,12 @@ export default function CacheProvider({ children }) {
   async function handleCreateSubmit(e) {
     e.preventDefault();
     const cacheImg = await uploadImage(image);
-
-    // endpoint call
     const response = await fetch(`/.netlify/functions/ipstack-endpoint`);
-    console.log('response', response);
 
     const json = await response.json();
-    console.log('ipstack data', json);
-    // 
+
+    setLatitude(json.data.latitude);
+    setLongitude(json.data.longitude);
 
     await createCache({ 
       title,
@@ -59,6 +56,14 @@ export default function CacheProvider({ children }) {
       latitude,
       longitude,
     });
+
+    setTitle('');
+    setDescription('');
+    setImage('');
+    setLatitude(0);
+    setLongitude(0);
+
+    window.location.href = '../';
   }
 
   const cacheStateAndSetters = {
