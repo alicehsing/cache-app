@@ -4,7 +4,7 @@ require('dotenv').config();
 
 exports.handler = async (event, context) => {
   try {
-    const response = await fetch('https://cat-fact.herokuapp.com/facts');
+    const response = await fetch(`http://api.ipstack.com/check?access_key=${process.env.IPSTACK_KEY}`);
     const data = await response.json();
     const json = JSON.stringify({ data });
     
