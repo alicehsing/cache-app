@@ -1,7 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 // import { client } from './services/client';
 import getUser, { createCache, signInUser, signUpUser, uploadImage } from './services/fetch-utils';
-
 const CacheContext = createContext();
 
 export default function CacheProvider({ children }) {
@@ -42,13 +41,13 @@ export default function CacheProvider({ children }) {
 
   async function handleCreateSubmit(e) {
     e.preventDefault();
-    console.log(image);
     const cacheImg = await uploadImage(image);
-    // const user = await getUser();
-    console.log(currentUser, 'curent user');
-    console.log(cacheImg, 'cache img');
-    console.log(`https://nioqwidggusxqcqbwypa.supabase.in/storage/v1/object/public/${cacheImg.Key}`);
+    const response = await fetch(`/.netlify/functions/ipstack-endpoint`);
 
+    const json = await response.json();
+
+    setLatitude(json.data.latitude);
+    setLongitude(json.data.longitude);
 
     await createCache({ 
       title,
@@ -57,7 +56,14 @@ export default function CacheProvider({ children }) {
       latitude,
       longitude,
     });
-      // make new ROW in supabase using form values stored in state (title, description, img) -- call in createCacheItem (fetch-utils)
+
+    setTitle('');
+    setDescription('');
+    setImage('');
+    setLatitude(0);
+    setLongitude(0);
+
+    window.location.href = '../';
   }
 
   const cacheStateAndSetters = {
