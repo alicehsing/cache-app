@@ -15,16 +15,6 @@ export async function signInUser(email, password) {
   return response.user;
 }
 
-export async function signUpUser(username, email, password) {
-  const response = await client.auth.signUp({
-    username,
-    email,
-    password
-  });
-
-  return response.user;
-}
-
 export async function signOutUser() {
   await client.auth.signOut();
   
@@ -32,3 +22,52 @@ export async function signOutUser() {
 }
 
 export default getUser;
+
+
+export async function getCacheById(id){
+  const response = await client
+    .from('cache')
+    .select()
+    .match({ id })
+    .single();
+
+  return checkError(response);
+}
+
+async function createProfile(username, email) {
+  const response = await client
+    .from('profiles')
+    .insert([{ username, email }]); 
+  return checkError(response);
+}
+
+export async function signUpUser(email, password, username){
+  const response = await client.auth.signUp({ email, password });
+  await createProfile(username, email);
+  return response.user;
+}
+
+export async function uploadImage(image) {
+  console.log(image);
+  const user = await getUser();
+  console.log(user);
+  const response = await client
+    .storage
+    .from('cache-images')
+    .upload(`${user.user.id}/${image.name}`, image, {
+      cacheControl: '3600',
+      upsert: false
+    });
+
+  return checkError(response);
+}
+
+export async function createCache(cacheObject){
+  const response = await client
+    .from('cache')
+    .insert([cacheObject]);
+
+  return checkError(response);
+
+
+}
