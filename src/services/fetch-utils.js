@@ -48,9 +48,7 @@ export async function signUpUser(email, password, username){
 }
 
 export async function uploadImage(image) {
-  console.log(image);
   const user = await getUser();
-  console.log(user);
   const response = await client
     .storage
     .from('cache-images')
@@ -68,6 +66,4 @@ export async function createCache(cacheObject){
     .insert([cacheObject]);
 
   return checkError(response);
-
-
 }
