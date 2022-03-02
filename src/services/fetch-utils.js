@@ -67,3 +67,11 @@ export async function createCache(cacheObject){
 
   return checkError(response);
 }
+
+export async function getAllCaches() {
+  const response = await client
+    .from('cache')
+    .select();
+
+  return checkError(response);
+}
