@@ -42,6 +42,8 @@ export default function CacheProvider({ children }) {
 
   async function handleCreateSubmit(e) {
     e.preventDefault();
+
+    
       // make new ROW in supabase using form values stored in state (title, description, img) -- call in createCacheItem (fetch-utils)
   }
 

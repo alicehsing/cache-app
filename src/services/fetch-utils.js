@@ -46,3 +46,27 @@ export async function signUpUser(email, password, username){
   await createProfile(username, email);
   return response.user;
 }
+
+export async function uploadImage(image) {
+  const user = await getUser();
+
+  const response = await client
+    .storage
+    .from('cache-images')
+    .upload(`${user.id}/${image.name}`, image, {
+      cacheControl: '3600',
+      upsert: false
+    });
+
+  return checkError(response);
+}
+
+export async function createCache(cacheObject){
+  const response = await client
+    .from('cache')
+    .insert([cacheObject]);
+
+  return checkError(response);
+
+
+}
