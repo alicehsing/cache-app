@@ -47,15 +47,15 @@ export default function CacheProvider({ children }) {
 
     const json = await response.json();
 
-    setLatitude(json.data.latitude);
-    setLongitude(json.data.longitude);
+    // setLatitude(json.data.latitude);
+    // setLongitude(json.data.longitude);
 
     await createCache({ 
       title,
       description,
       image:`https://nioqwidggusxqcqbwypa.supabase.in/storage/v1/object/public/${cacheImg.Key}`,
-      latitude,
-      longitude,
+      latitude: json.data.latitude,
+      longitude: json.data.longitude
     });
 
     setTitle('');

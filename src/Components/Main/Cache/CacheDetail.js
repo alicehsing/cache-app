@@ -2,6 +2,9 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCacheContext } from '../../../CacheProvider';
 import { createCache, getCacheById } from '../../../services/fetch-utils';
+// import Map from 'react-map-gl';
+// import 'mapbox-gl/dist/mapbox-gl.css';
+// import ReactMapGl from 'react-map-gl';
 
 export default function CacheDetail() {
   const { toggleView,
@@ -31,13 +34,13 @@ export default function CacheDetail() {
     const ipResponse = await fetch(`/.netlify/functions/ipstack-endpoint`);
 
     const json = await ipResponse.json();
-    setStartLat(json.data.latitude);
-    setStartLon(json.data.longitude);
+    // setStartLat(json.data.latitude);
+    // setStartLon(json.data.longitude);
 
     // with the users lat/lon that we get from ipstack call:
     // call mapbox with the query strings startLat, startLon, endLat, endLon
 
-    const mapResponse = await fetch(`/.netlify/functions/mapbox-endpoint?startLon=${startLon}&startLat=${startLat}&endLon=${cacheDetail.longitude}&endLat=${cacheDetail.latitude}`);
+    const mapResponse = await fetch(`/.netlify/functions/mapbox-endpoint?startLon=${json.data.longitude}&startLat=${json.data.latitude}&endLon=${cacheDetail.longitude}&endLat=${cacheDetail.latitude}`);
 
     console.log('mapResponse', mapResponse);
     // json the response
@@ -61,7 +64,21 @@ export default function CacheDetail() {
         // onLoad= get item based on Params. 
         // False=Default get the row in supabase. render image, title, description
       // True(toggle)=call the map. render the pin on map. */}
+      <section>
+        {/* <Map 
+          initialViewState={{
+            longitude: -122.4,
+            latitude: 37.8,
+            zoom: 10
+          }}
+          style={{
+            width: 600,
+            height: 400
+          }}
+          mapStyle="mapbox://style/mapbox/streets-v9"
+        /> */}
+        
+      </section>
     </>
-
   );
 }
