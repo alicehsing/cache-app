@@ -1,9 +1,20 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useCacheContext } from '../../CacheProvider';
+import { getUsersCache } from '../../services/fetch-utils';
+import CacheItem from './Cache/CacheItem';
 
 
 export default function ProfilePage() {
-  const { toggleView, setToggleView, userID, setUserID } = useCacheContext();
+  const { toggleView, setToggleView, cacheId, setCacheId, cacheList, setCacheList, } = useCacheContext();
+
+  useEffect(() => {
+    async function fetchMyCache() {
+      const myCacheData = await getUsersCache(cacheId);
+
+      setCacheList(myCacheData);
+    }
+    fetchMyCache();
+  }, [cacheId, setCacheList]);
 
   return (
     // carousoul..onDefault= Created caches.
@@ -12,6 +23,14 @@ export default function ProfilePage() {
     // carousoul..found caches
     // (stretch) onClick of image redirect to detail page of cache.
 
-    <div>ProfilePage</div>
+    <section>
+      {
+        cacheList.map((cache, i) => 
+          <CacheItem 
+            key={cache.title + i}
+            cache={cache}/>
+        )
+      }
+    </section>
   );
 }

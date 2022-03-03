@@ -22,7 +22,7 @@ export default function CacheProvider({ children }) {
   const [startLat, setStartLat] = useState(0);
   const [startLon, setStartLon] = useState(0);
   const [cacheDetail, setCacheDetail] = useState({});
-  const [userID, setUserID] = useState(0);
+  const [cacheId, setCacheId] = useState('');
   // const [aboutList, setAboutList] = useState([]);
 
   
@@ -87,7 +87,7 @@ export default function CacheProvider({ children }) {
     startLat, setStartLat,
     startLon, setStartLon,
     cacheDetail, setCacheDetail,
-    userID, setUserID,
+    cacheId, setCacheId,
     handleAuthSubmit,
     handleCreateSubmit,
     // aboutList, setAboutList

@@ -11,8 +11,8 @@ export default function CachePage() {
   
   useEffect(() => {
     async function fetchCache() {
-      const myCacheData = await getAllCaches();
-      setCacheList(myCacheData);
+      const cacheData = await getAllCaches();
+      setCacheList(cacheData);
     }
     fetchCache();
   }, [setCacheList]);
