@@ -12,7 +12,7 @@ import AboutPage from './About/AboutPage';
 import CachePage from './Cache/CachePage';
 import CacheDetail from './Cache/CacheDetail';
 import CreatePage from './CreatePage';
-import ProfilePage from './ProfilePage';
+import ProfilePage from './Profile/ProfilePage';
 import { useCacheContext } from '../../CacheProvider';
 
 
