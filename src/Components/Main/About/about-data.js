@@ -16,7 +16,7 @@ export const aboutData = [
   },
   {
     name: 'Ari Harlem-Caballero',
-    image: `./about-photos/about-${4}.png`,
+    image: {src=`./public/about-photos/about-${4}.png`},
     description: `This is Ari's example description`
   }
 ];

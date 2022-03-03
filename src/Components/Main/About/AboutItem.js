@@ -3,14 +3,14 @@ import React from 'react';
 export default function AboutItem({ 
   name,
   image,
-  desciption
+  description
 }) {
   return (
     <>
       <figure>
         <h2>{name}</h2>
-        <img />
-        <p></p>
+        <img alt={name} src={image}/>
+        <p>{description}</p>
       </figure>
     </>
   );
