@@ -52,13 +52,14 @@ export default function CacheDetail() {
     <>
       <section className='cache-detail'>
 
-        <figure>
-          <h2>{cacheDetail.title}</h2>
-          <img alt={cacheDetail.title} src={cacheDetail.image}/>
-          <figcaption>{cacheDetail.latitude}°, {cacheDetail.longitude}°</figcaption>
-          <p>{cacheDetail.description}</p>
+        <figure id='figure-detail'>
+          <h2 id='cache-title'>{cacheDetail.title}</h2>
+          <img id='detail-page-img' alt={cacheDetail.title} src={cacheDetail.image}/>
+          <figcaption id='lat-lon'>{cacheDetail.latitude}°, {cacheDetail.longitude}°</figcaption>
+          <h3 id='description-title'>Description</h3>
+          <p id='description'>{cacheDetail.description}</p>
         </figure>
-        <button onClick={handleMap}>Map</button>
+        <button id='map-toggle' onClick={handleMap}>Map</button>
       </section>
       {/* // toggle view first..Stretch-swipe up.
         // onLoad= get item based on Params. 
