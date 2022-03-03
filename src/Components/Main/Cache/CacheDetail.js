@@ -39,10 +39,7 @@ export default function CacheDetail() {
 
     // with the users lat/lon that we get from ipstack call:
     // call mapbox with the query strings startLat, startLon, endLat, endLon
-
-    const mapResponse = await fetch(`/.netlify/functions/mapbox-endpoint?startLon=${json.data.longitude}&startLat=${json.data.latitude}&endLon=${cacheDetail.longitude}&endLat=${cacheDetail.latitude}`);
-
-    console.log('mapResponse', mapResponse);
+  
     // json the response
 
     //how tf do we get the map?
@@ -65,21 +62,7 @@ export default function CacheDetail() {
         // onLoad= get item based on Params. 
         // False=Default get the row in supabase. render image, title, description
       // True(toggle)=call the map. render the pin on map. */}
-      <section>
-        {/* <Map 
-          initialViewState={{
-            longitude: -122.4,
-            latitude: 37.8,
-            zoom: 10
-          }}
-          style={{
-            width: 600,
-            height: 400
-          }}
-          mapStyle="mapbox://style/mapbox/streets-v9"
-        /> */}
-        
-      </section>
+      
     </>
   );
 }
