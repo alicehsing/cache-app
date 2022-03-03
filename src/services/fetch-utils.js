@@ -76,8 +76,11 @@ export async function getAllCaches() {
   return checkError(response);
 }
 
-// export async function getUsersCache(user_id) {
-//   const response = await client
-//     .from('collections')
+export async function getUsersCache(cache_id) {
+  const response = await client
+    .from('collections')
+    .select(`*, profile(*), cache(*)`)
+    .match({ cache_id });
 
-// }
+  return checkError(response);
+}
