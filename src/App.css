@@ -118,7 +118,7 @@ figure img {
 
 }
 
-#title-form, #cache-title, #description-title{
+#title-form, #cache-title, #description-title, #about-title{
   color:#304c29;
 }
 #figure-detail{
@@ -134,9 +134,10 @@ figure img {
   align-items: center;
   justify-content: center;
 }
-#detail-page-img, #item-image{
+#detail-page-img, #item-image, #profile-image{
   box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
   -0.05em -0.05em 0.15em #d3d3d3;
+  border-radius: 5px;
 }
 #logo-img{
   height:70px;
@@ -147,4 +148,24 @@ figure img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#about-figure{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#about-description, #description{
+  border:solid 2px;
+  border-color:#304c29;
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
+  text-align: center;
+  width: 300px;
+  border-radius:5px;
+}
+#create-form{
+  margin-top:30%;
+  height:420px;
 }

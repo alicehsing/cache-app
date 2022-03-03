@@ -7,10 +7,10 @@ export default function AboutItem({
 }) {
   return (
     <>
-      <figure>
-        <h2>{name}</h2>
-        <img alt={name} src={image}/>
-        <p>{description}</p>
+      <figure id='about-figure'>
+        <h2 id='about-title'>{name}</h2>
+        <img id='profile-image' alt={name} src={image}/>
+        <p id='about-description'>{description}</p>
       </figure>
     </>
   );
