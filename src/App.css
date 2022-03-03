@@ -31,13 +31,19 @@ form {
   box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
               -0.05em -0.05em 0.15em #d3d3d3;
   margin: 3em 0;
+  text-align: center;
+  border-radius: 10px;
+  
 }
 
-form#auth-form {
+form#auth-form, #create-form {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border:solid 4px;
+  border-color:#304c29;
+  
 }
 
 form div {
@@ -55,7 +61,7 @@ form div span {
 }
 
 form div span.active {
-  background: white;
+  background: #a4be80;
   cursor: initial;
 }
 
@@ -65,10 +71,16 @@ form label {
   flex-direction: column;
   margin: 0.5em;
   align-self: center;
+  
 }
 
 form input {
   margin: 0.25em 0;
+  height:50px;
+  border:solid 2px;
+  border-color:#304c29;
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
 }
 
 button {
@@ -77,8 +89,62 @@ button {
   padding: 0.25em;
   align-self: center;
   cursor: pointer;
+  background-color:#a4be80;
 }
 
 figure img {
   width: 300px;
+}
+#form-button{
+  height:70px;
+  width:200px;
+  border:solid 4px;
+  border-color:#304c29;
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
+  border-radius: 10px;
+  font-size: large;
+}
+#map-toggle{
+  height:50px;
+  width:200px;
+  border:solid 4px;
+  border-color:#304c29;
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
+  border-radius: 10px;
+  font-size: large;
+  margin-top:5px;
+
+}
+
+#title-form, #cache-title, #description-title{
+  color:#304c29;
+}
+#figure-detail{
+  text-align: center;
+  
+}
+#lat-lon, #description{
+  color:#b2483b;
+}
+.cache-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#detail-page-img, #item-image{
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
+}
+#logo-img{
+  height:70px;
+  width: 70px;
+  margin-top:10px;
+}
+#main-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

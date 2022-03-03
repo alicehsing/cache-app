@@ -11,8 +11,8 @@ export default function CreatePage() {
 
   return (
     <>
-      <form onSubmit={handleCreateSubmit}>
-        <h2>Create Cache</h2>
+      <form id='create-form' onSubmit={handleCreateSubmit}>
+        <h2 id="title-form">Create Cache</h2>
         <label htmlFor='title' >Title
           <input name='title' onChange={e => setTitle(e.target.value)}
             value={title}
@@ -25,6 +25,7 @@ export default function CreatePage() {
             type='file'
             name='img'
             accept='image/ *'
+            id='image-upload'
             required />
         </label>
 
@@ -34,7 +35,7 @@ export default function CreatePage() {
             name='description'
             required ></textarea>
         </label>
-        <button>Submit Cache</button>
+        <button id='form-button'>Submit Cache</button>
       </form>
 
     </>
