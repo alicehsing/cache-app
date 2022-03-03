@@ -45,6 +45,9 @@ form#auth-form, #create-form {
   border-color:#304c29;
   
 }
+#auth-form{
+  height:390px;
+}
 
 form div {
   display: flex;
