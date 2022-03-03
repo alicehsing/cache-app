@@ -7,8 +7,7 @@ exports.handler = async (event, context) => {
     const response = await fetch(`http://api.ipstack.com/check?access_key=${process.env.IPSTACK_KEY}`);
     const data = await response.json();
     const json = JSON.stringify({ data });
-    console.log('endpointjson', json);
-    
+
     return { 
       statusCode: 200, 
       body: json

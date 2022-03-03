@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
   try {
     const { startLat, startLon, endLat, endLon } = event.queryStringParameters;
 
-    const response = await fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${startLat},${startLon};${endLat},${endLon}?geometries=geojson&access_token=${process.env.IPSTACK_KEY}`);
+    const response = await fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${startLon},${startLat};${endLon},${endLat}?geometries=geojson&access_token=${process.env.MAPBOX_KEY}`);
 
     const data = await response.json();
     const json = JSON.stringify({ data });

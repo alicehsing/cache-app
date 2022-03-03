@@ -28,19 +28,18 @@ export default function CacheDetail() {
     // console.log(cacheDetail.latitude, cacheDetail.longitude);
     // we have the items lat/lon stored in cacheDetail (endLat, endLon)
     // we need the users current location by calling ipstack
-    console.log('gonna fetch now...');
-    const response = await fetch(`/.netlify/functions/ipstack-endpoint`);
-    console.log('response', response);
-    const json = await response.json();
+    const ipResponse = await fetch(`/.netlify/functions/ipstack-endpoint`);
 
+    const json = await ipResponse.json();
     setStartLat(json.data.latitude);
     setStartLon(json.data.longitude);
 
-    console.log('startLat', json.data.latitude);
-    console.log('startLon', json.data.longitude);
-
     // with the users lat/lon that we get from ipstack call:
     // call mapbox with the query strings startLat, startLon, endLat, endLon
+
+    const mapResponse = await fetch(`/.netlify/functions/mapbox-endpoint?startLon=${startLon}&startLat=${startLat}&endLon=${cacheDetail.longitude}&endLat=${cacheDetail.latitude}`);
+
+    console.log('mapResponse', mapResponse);
     // json the response
 
     //how tf do we get the map?
