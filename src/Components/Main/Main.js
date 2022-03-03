@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import { signOutUser } from '../../services/fetch-utils';
 import AuthPage from './AuthPage';
-import AboutPage from './AboutPage';
+import AboutPage from './About/AboutPage';
 import CachePage from './Cache/CachePage';
 import CacheDetail from './Cache/CacheDetail';
 import CreatePage from './CreatePage';
