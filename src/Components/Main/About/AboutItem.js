@@ -1,11 +1,14 @@
 import React from 'react';
-import { aboutData } from './about-data';
 
-export default function AboutItem({ about }) {
+export default function AboutItem({ 
+  name,
+  image,
+  desciption
+}) {
   return (
     <>
       <figure>
-        <h2>{about.name}</h2>
+        <h2>{name}</h2>
         <img />
         <p></p>
       </figure>

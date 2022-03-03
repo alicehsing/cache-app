@@ -23,7 +23,7 @@ export default function CacheProvider({ children }) {
   const [startLon, setStartLon] = useState(0);
   const [cacheDetail, setCacheDetail] = useState({});
   const [userID, setUserID] = useState(0);
-  const [aboutList, setAboutList] = useState([]);
+  // const [aboutList, setAboutList] = useState([]);
 
   
   async function handleAuthSubmit(e) {
@@ -90,7 +90,7 @@ export default function CacheProvider({ children }) {
     userID, setUserID,
     handleAuthSubmit,
     handleCreateSubmit,
-    aboutList, setAboutList
+    // aboutList, setAboutList
   };
 
   return <CacheContext.Provider value={cacheStateAndSetters}>
