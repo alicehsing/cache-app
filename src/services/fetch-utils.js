@@ -79,8 +79,8 @@ export async function getAllCaches() {
 export async function getUsersCache(cache_id) {
   const response = await client
     .from('collections')
-    .select(`*, profile(*), cache(*)`)
+    .select(`*, profiles(*), cache(*)`)
     .match({ cache_id });
-
+  console.log('fetch', response);
   return checkError(response);
 }
