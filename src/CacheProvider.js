@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
-// import { client } from './services/client';
-import getUser, { createCache, signInUser, signUpUser, uploadImage } from './services/fetch-utils';
+import { createCache, signInUser, signUpUser, uploadImage } from './services/fetch-utils';
 const CacheContext = createContext();
 
 export default function CacheProvider({ children }) {
@@ -9,11 +8,7 @@ export default function CacheProvider({ children }) {
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
   const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('supabase.auth.token')));
-  const [search, setSearch] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
   const [cacheList, setCacheList] = useState([]);
-  const [userLocation, setUserLocation] = useState({}); /* based on lat/lon: current IP address for nearby */
-  const [toggleView, setToggleView] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [image, setImage] = useState({});
@@ -22,9 +17,6 @@ export default function CacheProvider({ children }) {
   const [startLat, setStartLat] = useState(0);
   const [startLon, setStartLon] = useState(0);
   const [cacheDetail, setCacheDetail] = useState({});
-  const [userID, setUserID] = useState(0);
-  // const [aboutList, setAboutList] = useState([]);
-
   
   async function handleAuthSubmit(e) {
     e.preventDefault();
@@ -45,11 +37,7 @@ export default function CacheProvider({ children }) {
     e.preventDefault();
     const cacheImg = await uploadImage(image);
     const response = await fetch(`/.netlify/functions/ipstack-endpoint`);
-
     const json = await response.json();
-
-    // setLatitude(json.data.latitude);
-    // setLongitude(json.data.longitude);
 
     await createCache({ 
       title,
@@ -74,11 +62,7 @@ export default function CacheProvider({ children }) {
     password, setPassword,
     username, setUsername,
     currentUser, setCurrentUser,
-    search, setSearch,
-    searchResults, setSearchResults,
     cacheList, setCacheList,
-    userLocation, setUserLocation,
-    toggleView, setToggleView,
     title, setTitle,
     description, setDescription,
     image, setImage,
@@ -87,10 +71,8 @@ export default function CacheProvider({ children }) {
     startLat, setStartLat,
     startLon, setStartLon,
     cacheDetail, setCacheDetail,
-    userID, setUserID,
     handleAuthSubmit,
     handleCreateSubmit,
-    // aboutList, setAboutList
   };
 
   return <CacheContext.Provider value={cacheStateAndSetters}>
@@ -101,17 +83,3 @@ export default function CacheProvider({ children }) {
 export function useCacheContext() {
   return useContext(CacheContext);
 }
-
-// STATE WE NEED
-
-// Auth: state for newUser, setNewUser, email, setEmail, password, setPassword, username, setUsername, handleSubmit
-
-// Main : currentUser, setCurrentUser
-
-// Cache (list): search, setSearch, cacheList, setCacheList, userLocation(ie: IP address), setUserLocation, toggleView, setToggleView
-
-// Create Cache: title, setTitle, description, setDescription, image, setImage, latitude, setLatitude, longitude, setLongitude, handleSubmit
-
-// Cache (detail): toggleView, setToggleView, params, cacheDetail, setCacheDetail (single OBJ/row in supabase)
-
-// Profile: toggleView, setToggleView, userID, setUserId

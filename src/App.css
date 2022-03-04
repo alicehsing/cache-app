@@ -13,17 +13,6 @@ body,
 
 }
 
-.map {
-  height: 300px;
-}
- 
-@media screen and (min-width: 1024px){
-    .map {
-        height: 500px;
-    }
-}
-
-
 form {
   width: 300px;
   display: flex;
@@ -45,6 +34,7 @@ form#auth-form, #create-form {
   border-color:#304c29;
   
 }
+
 #auth-form{
   height:390px;
 }
@@ -74,7 +64,6 @@ form label {
   flex-direction: column;
   margin: 0.5em;
   align-self: center;
-  
 }
 
 form input {
@@ -98,6 +87,7 @@ button {
 figure img {
   width: 300px;
 }
+
 #form-button{
   height:70px;
   width:200px;
@@ -108,6 +98,7 @@ figure img {
   border-radius: 10px;
   font-size: large;
 }
+
 #map-toggle{
   height:50px;
   width:200px;
@@ -118,40 +109,46 @@ figure img {
   border-radius: 10px;
   font-size: large;
   margin-top:5px;
-
 }
 
 #title-form, #cache-title, #description-title, #about-title{
   color:#304c29;
 }
+
 #figure-detail{
-  text-align: center;
-  
+  text-align: center; 
 }
+
 #lat-lon, #description{
   color:#b2483b;
 }
+
 .cache-detail{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+
 #detail-page-img, #item-image, #profile-image{
   box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
   -0.05em -0.05em 0.15em #d3d3d3;
   border-radius: 5px;
 }
+
 #logo-img{
   height:70px;
   width: 70px;
   margin-top:10px;
 }
+
 #main-header{
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
+
 #about-figure{
   display: flex;
   flex-direction: column;
@@ -159,6 +156,7 @@ figure img {
   text-align: center;
   align-items: center;
 }
+
 #about-description, #description{
   border:solid 2px;
   border-color:#304c29;
@@ -167,18 +165,21 @@ figure img {
   text-align: center;
   width: 300px;
   border-radius:5px;
+  padding: 10px;
 }
+
 #create-form{
   margin-top:25%;
   height:450px;
 }
+
 .button-section{
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  
 }
+
 .nav-button{
   height:50px;
   width: 300px;
@@ -193,7 +194,6 @@ figure img {
   -0.05em -0.05em 0.15em #d3d3d3;
 }
 
-/* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
   width: 36px;
@@ -202,40 +202,30 @@ figure img {
   top: 36px;
 }
  
-/* Color/shape of burger icon bars */
 .bm-burger-bars {
   background: #373a47;
-  
 }
  
-/* Color/shape of burger icon bars on hover*/
+
 .bm-burger-bars-hover {
   background: #304c29;
 }
- 
-/* Position and sizing of clickable cross button */
+
 .bm-cross-button {
   height: 24px;
   width: 24px;
 }
  
-/* Color/shape of close button cross */
 .bm-cross {
   background: #bdc3c7;
 }
- 
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
+
 .bm-menu-wrap {
 
   position: fixed;
   height: 100%;
-  
 }
  
-/* General sidebar styles */
 .bm-menu {
   display: flex;
   justify-content: center;
@@ -245,23 +235,30 @@ Note: Beware of modifying this element as it can break the animations - you shou
   font-size: 1.15em;
 }
  
-/* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
   fill: #373a47;
 }
- 
-/* Wrapper for item list */
+
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
 }
  
-/* Individual item */
 .bm-item {
   display: inline-block;
 }
  
-/* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
+}
+
+.map {
+  height: 300px;
+}
+ 
+@media screen and (min-width: 1024px){
+    .map {
+        height: 500px;
+        width: 300px;
+    }
 }

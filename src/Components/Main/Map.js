@@ -14,11 +14,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
         return <ItemMarker key={ item + i } item={item} />;
       }) 
     }
-    
-    {/* <Marker position={{ lat: -34.397, lng: 150.644 }} /><Marker position={{ lat: 45.397, lng: -150.644 }} /></>} */}
   </GoogleMap>));
-
-{/* <MyMapComponent isMarkerShown /> // Map with a Marker
-<MyMapComponent isMarkerShown={false} /> // Just only Map */}
 
 export default MyMapComponent;

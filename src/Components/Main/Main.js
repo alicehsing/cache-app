@@ -12,11 +12,8 @@ import AboutPage from './About/AboutPage';
 import CachePage from './Cache/CachePage';
 import CacheDetail from './Cache/CacheDetail';
 import CreatePage from './CreatePage';
-import ProfilePage from './ProfilePage';
 import { useCacheContext } from '../../CacheProvider';
 import { slide as Menu } from 'react-burger-menu';
-
-
 
 
 export default function Main() {
@@ -28,7 +25,6 @@ export default function Main() {
         {
           currentUser
           && <>
-            {/* replace with burger menu library component */}
             <Menu className='menu' width={280} height={200}>
               <section className='button-section'>
                 <button className='nav-button'>
@@ -36,9 +32,6 @@ export default function Main() {
                 </button>
                 <button className='nav-button'>
                   <NavLink to="/create">Create</NavLink>
-                </button>
-                <button className='nav-button'>
-                  <NavLink to="/profile/:id">Profile</NavLink>
                 </button>
                 <button className='nav-button'>
                   <NavLink to="/about">About</NavLink>
@@ -75,13 +68,6 @@ export default function Main() {
             {
               currentUser
                 ? <CreatePage />
-                : <Redirect to="/" />
-            }
-          </Route>
-          <Route exact path="/profile/:id">
-            {
-              currentUser
-                ? <ProfilePage />
                 : <Redirect to="/" />
             }
           </Route>

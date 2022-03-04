@@ -4,10 +4,8 @@ import { getAllCaches } from '../../../services/fetch-utils';
 import CacheItem from './CacheItem';
 import MyMapComponent from '../Map';
 
-
 export default function CachePage() {
-  const { search, setSearch, cacheList, setCacheList, userLocation, setUserLocation, toggleView, setToggleView } = useCacheContext();
-
+  const { cacheList, setCacheList } = useCacheContext();
   
   useEffect(() => {
     async function fetchCache() {
@@ -17,14 +15,9 @@ export default function CachePage() {
     fetchCache();
   }, [setCacheList]);
 
-
-
   return (
     <>
       <MyMapComponent 
-      /* //data from cachelist lat and lon
-        //pass lat and lon as props
-      */
         cacheList = {cacheList}
         isMarkerShown={true}
         googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_KEY}&v=3.exp&libraries=geometry,drawing,places`}
@@ -32,11 +25,6 @@ export default function CachePage() {
         containerElement={<div style={{ height: `400px` }} />}
         mapElement={<div style={{ height: `100%` }} />}/>
       
-      {/* <Map googleMaps={googleMaps}/> */}
-      {/* carousoul, search and toggle view 
-      true= map
-      false= carousoul
-      onClick link to detail page*/}
       <section>
         {
           cacheList.map((cache, i) => 
