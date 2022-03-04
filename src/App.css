@@ -45,6 +45,9 @@ form#auth-form, #create-form {
   border-color:#304c29;
   
 }
+#auth-form{
+  height:390px;
+}
 
 form div {
   display: flex;
@@ -118,7 +121,7 @@ figure img {
 
 }
 
-#title-form, #cache-title, #description-title{
+#title-form, #cache-title, #description-title, #about-title{
   color:#304c29;
 }
 #figure-detail{
@@ -134,9 +137,10 @@ figure img {
   align-items: center;
   justify-content: center;
 }
-#detail-page-img, #item-image{
+#detail-page-img, #item-image, #profile-image{
   box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
   -0.05em -0.05em 0.15em #d3d3d3;
+  border-radius: 5px;
 }
 #logo-img{
   height:70px;
@@ -147,4 +151,117 @@ figure img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#about-figure{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+#about-description, #description{
+  border:solid 2px;
+  border-color:#304c29;
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
+  text-align: center;
+  width: 300px;
+  border-radius:5px;
+}
+#create-form{
+  margin-top:25%;
+  height:450px;
+}
+.button-section{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  
+}
+.nav-button{
+  height:50px;
+  width: 300px;
+  align-items: center;
+  margin:5px;
+  margin-right:30px;
+  border-radius:5px;
+  border:solid 2px;
+  font-size: larger;
+  border-color:#304c29;
+  box-shadow: 0.25em 0.25em 0.5em #3d3d3d,
+  -0.05em -0.05em 0.15em #d3d3d3;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+ 
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+  
+}
+ 
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #304c29;
+}
+ 
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+ 
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+ 
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+
+  position: fixed;
+  height: 100%;
+  
+}
+ 
+/* General sidebar styles */
+.bm-menu {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  background: #304c29;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+ 
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+ 
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+ 
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+ 
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }
