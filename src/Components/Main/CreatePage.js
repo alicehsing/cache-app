@@ -3,7 +3,13 @@ import { useCacheContext } from '../../CacheProvider';
 
 
 export default function CreatePage() {
-  const { title, setTitle, description, setDescription, image, setImage, latitude, setLatitude, longitude, setLongitude, handleCreateSubmit } = useCacheContext();
+  const { 
+    title, 
+    setTitle, 
+    description, 
+    setDescription, 
+    setImage, 
+    handleCreateSubmit } = useCacheContext();
 
   function handleImageUpload(e){
     setImage(e.target.files[0]); 

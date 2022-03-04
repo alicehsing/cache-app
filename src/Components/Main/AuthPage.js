@@ -1,14 +1,8 @@
 import React from 'react';
 import { useCacheContext } from '../../CacheProvider';
-// import logo from 'public/logo.png';
-
-
-// TODO: state for newUser, setNewUser, email, setEmail, password, setPassword, username, setUsername
 
 export default function AuthPage() {
-  <header>
-    {/* <img src={logo} alt='logo' /> */}
-  </header>;
+ 
   const {
     handleAuthSubmit,    
     newUser, setNewUser,

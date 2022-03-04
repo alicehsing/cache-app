@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 require('dotenv').config();
 
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
   try {
     const response = await fetch(`http://api.ipstack.com/check?access_key=${process.env.REACT_APP_IPSTACK_KEY}`);
     const data = await response.json();
