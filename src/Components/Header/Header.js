@@ -6,7 +6,9 @@ export default function Header() {
 
   return (
     <header id='main-header' style={{ backgroundImage  : `url(${background})` }} >
+     
       <img src={logo} alt='logo' id='logo-img' />
+     
 
     </header>
   );
