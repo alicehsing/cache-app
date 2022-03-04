@@ -37,7 +37,6 @@ export default function CreatePage() {
         </label>
         <button id='form-button'>Submit Cache</button>
       </form>
-
     </>
   );
 }
