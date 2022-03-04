@@ -2,7 +2,7 @@ export const aboutData = [
   {
     name: 'Alice Hsing',
     image: `./about-${1}.jpg`,
-    description: `This is Alice's example description`,
+    description: `I am a software developer located in Portland, Oregon. I am passionate about uplifting others and getting to know people and their stories. When I’m not coding, I love to get out in the nature, hiking, cycling and camping with my family and friends. I would love to use Geocaching app to introduce my kids to new parks, new activities and to make travel time more interesting.`,
   },
   {
     name: 'Ryan Flitcroft',
@@ -30,6 +30,6 @@ export const aboutData = [
   {
     name: 'Ari Harlem-Caballero',
     image: `./about-${4}.png`,
-    description: `This is Ari's example description`
+    description: `My name's Ari (they/them) and I'm a full-stack developer from Portland, OR. Cache App was fun to work on because I actually detest scavenger hunts.`
   }
 ];
