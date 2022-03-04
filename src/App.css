@@ -35,8 +35,8 @@ form#auth-form, #create-form {
   
 }
 
-#auth-form{
-  height:390px;
+a {
+  text-decoration: none;
 }
 
 form div {
