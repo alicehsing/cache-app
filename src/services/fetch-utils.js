@@ -56,7 +56,8 @@ export async function createCache(cacheObject){
 export async function getAllCaches() {
   const response = await client
     .from('cache')
-    .select();
+    .select()
+    .order('id', { ascending: false });
 
   return checkError(response);
 }
