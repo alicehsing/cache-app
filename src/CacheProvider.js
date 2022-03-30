@@ -18,6 +18,7 @@ export default function CacheProvider({ children }) {
   const [startLon, setStartLon] = useState(0);
   const [cacheDetail, setCacheDetail] = useState({});
   
+  // very nice work shipping a function through your Context! it's a little weird to see an 'event' in the provider, but it's cool that you were able to puzzle through it. I would generally want to see the e.preventDefault() stuff happening inside the component, but the rest of this function is very nice as it is
   async function handleAuthSubmit(e) {
     e.preventDefault();
     {
@@ -34,6 +35,7 @@ export default function CacheProvider({ children }) {
   }
 
   async function handleCreateSubmit(e) {
+    // again, kind of weird to see the e.preventDefault() in a Provider. It kind of weds this function to only be used inside forms, when you might (possibly?) want to use it in response to things other than forms
     e.preventDefault();
     const cacheImg = await uploadImage(image);
     const response = await fetch(`/.netlify/functions/ipstack-endpoint`);
@@ -53,6 +55,7 @@ export default function CacheProvider({ children }) {
     setLatitude(0);
     setLongitude(0);
 
+    // hmm, i'd like to see this happen with react router (histpory.push, etc) instead of a hard URL manipulation
     window.location.href = '../';
   }
 

@@ -12,6 +12,7 @@ export default function CreatePage() {
     handleCreateSubmit } = useCacheContext();
 
   function handleImageUpload(e){
+    // nice work figuring out the image upload stuff
     setImage(e.target.files[0]); 
   }
 
